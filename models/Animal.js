@@ -28,11 +28,11 @@ Project.init(
         key: "id",
       },
     },
-    enclosure_id: {
+    pokehome_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "enclosure",
+        model: "pokehome",
         key: "id",
       },
     },

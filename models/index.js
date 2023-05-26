@@ -1,27 +1,27 @@
 const User = require("./User");
 const Animal = require("./Animal");
-const Classes = require("./Classes");
+const Type = require("./Type");
 const Diet = require("./Diet");
-const Enclosure = require("./Enclosure");
+const Pokehome = require("./Pokehome");
 const Habitat = require("./Habitat");
 const Species = require("./Species");
 
-User.hasMany(Enclosure, {
+User.hasMany(Pokehome, {
   foreignKey: "user_id",
   onDelete: "CASCADE",
 });
 
-Enclosure.belongsTo(User, {
+Pokehome.belongsTo(User, {
   foreignKey: "user_id",
 });
 
-Enclosure.hasMany(Animal, {
-  foreignKey: "enclosure_id",
+Pokehome.hasMany(Animal, {
+  foreignKey: "pokehome_id",
   onDelete: "CASCADE",
 });
 
-Animal.belongsTo(Enclosure, {
-  foreignKey: "enclosure_id",
+Animal.belongsTo(Pokehome, {
+  foreignKey: "pokehome_id",
 });
 
-module.exports = { User, Animal, Classes, Diet, Enclosure, Habitat, Species };
+module.exports = { User, Animal, Type, Diet, Pokehome, Habitat, Species };
