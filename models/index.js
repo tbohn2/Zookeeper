@@ -1,13 +1,27 @@
-const User = require('./User');
-const Project = require('./Project');
+const User = require("./User");
+const Animal = require("./Animal");
+const Classes = require("./Classes");
+const Diet = require("./Diet");
+const Enclosure = require("./Enclosure");
+const Habitat = require("./Habitat");
+const Species = require("./Species");
 
-User.hasMany(Project, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+User.hasMany(Enclosure, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 
-Project.belongsTo(User, {
-  foreignKey: 'user_id'
+Enclosure.belongsTo(User, {
+  foreignKey: "user_id",
 });
 
-module.exports = { User, Project };
+Enclosure.hasMany(Animal, {
+  foreignKey: "enclosure_id",
+  onDelete: "CASCADE",
+});
+
+Animal.belongsTo(Enclosure, {
+  foreignKey: "enclosure_id",
+});
+
+module.exports = { User, Animal, Classes, Diet, Enclosure, Habitat, Species };
