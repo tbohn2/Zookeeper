@@ -19,30 +19,38 @@ Project.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    class_id: {
+    type1_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "class",
+        model: "type",
         key: "id",
       },
     },
-    diet_id: {
+    type2_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
-        model: "diet",
+        model: "type",
         key: "id",
       },
     },
-    habitat_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "habitat",
-        key: "id",
-      },
-    },
+    // diet_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: "diet",
+    //     key: "id",
+    //   },
+    // },
+    // habitat_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: "habitat",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,
