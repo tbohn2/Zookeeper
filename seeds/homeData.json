@@ -1,0 +1,12 @@
+[
+    {
+        "name":"Victory Road",
+        "size": 12,
+        "description": "The Road before the Pokemon Championship"
+    },
+    {
+        "name": "Route 1",
+        "size": 4,
+        "description": "The first steps of every trainer"
+    }
+]
