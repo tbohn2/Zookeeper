@@ -1,0 +1,47 @@
+<!-- Homepage for "Zookeper" -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zookeper - Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Build Your Zoo Button Section -->
+  <div class="container text-center">
+    <h1>Welcome to Zookeper</h1>
+    <p>Build your own zoo and manage your animal collection!</p>
+    <button class="btn btn-primary" id="build-zoo-button">Build Your PokeZoo</button>
+  </div>
+
+  <!-- Login Button -->
+  <div class="container-fluid text-right">
+    <button class="btn btn-secondary" id="login-button">Login</button>
+  </div>
+
+  <!-- Sample Zoo Section -->
+  <div class="container text-center">
+    <h2>Explore a Zoo</h2>
+    <p>Take a look at a sample zoo created by another user:</p>
+    <!-- Add your Handlebars template code here to display a sample zoo or another user's zoo -->
+  </div>
+
+  <!-- JavaScript Code -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Add your JavaScript code here
+    // Handle button clicks and perform necessary actions
+    $(document).ready(function() {
+      $("#build-zoo-button").click(function() {
+        // Redirect to the build zoo page
+        window.location.href = "/build-zoo";
+      });
+
+      $("#login-button").click(function() {
+        // Redirect to the login page
+        window.location.href = "/login";
+      });
+    });
+  </script>
+</body>
+</html>
