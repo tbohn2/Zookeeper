@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Pokehome extends Model {}
+class Pokehome extends Model { }
 
 Pokehome.init(
   {
