@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Pokehome } = require('../models');
+const { Pokehome, Animal } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/dashboard', withAuth, async (req, res) => {
@@ -7,10 +7,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const user_id = req.session.user_id
     const pokezoos = await Pokehome.findAll({
       where: { user_id: user_id },
+      attributes: ['name'],
       include: [
         {
-          model: User,
-          attributes: ['name'],
+          model: Animal,
+          attributes: ['picurl'],
         },
       ],
     });
