@@ -3,8 +3,9 @@ const { User, Pokemon, Species, Pokehome } = require("../models");
 const pokeData = require("./pokeData.json");
 const homeData = require("./homeData.json");
 const userData = require("./userData.json");
+const { findAll } = require("../models/User");
 
-let url = `https://pokeapi.co/api/v2/pokemon-species/`;
+let url = `https://pokeapi.co/api/v2/pokemon/`;
 let speciesData = [];
 
 const fetchData = async () => {
@@ -15,7 +16,7 @@ const fetchData = async () => {
           id: data.id,
           name: data.name,
           type: JSON.stringify(data.types),
-          // image: data.sprites.front_default,
+          image: data.sprites.front_default,
         };
         speciesData.push(species);
       })
@@ -26,31 +27,33 @@ const fetchData = async () => {
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await fetchData();
-
   const users = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
 
+  await fetchData();
   const species = await Species.bulkCreate(speciesData, {
     individualHooks: true,
     returning: true,
   });
 
-  // const pokehomes = await Pokehome.bulkCreate({
-  //   ...homeData,
-  //   user_id: users[Math.floor(Math.random() * users.length)].id,
-  // });
+  for (const home of homeData) {
+    await Pokehome.create({
+      ...home,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+  const pokehomes = await Pokehome.findAll();
 
-  // for (const pokemon of pokeData) {
-  //   await Pokemon.create({
-  //     ...pokemon,
+  for (const pokemon of pokeData) {
+    await Pokemon.create({
+      ...pokemon,
 
-  //     pokehome_id: pokehomes[Math.floor(Math.random() * pokehomes.length)].id,
-  //     species_id: species[Math.floor(Math.random() * species.length)].id,
-  //   });
-  // }
+      pokehome_id: pokehomes[Math.floor(Math.random() * pokehomes.length)].id,
+      species_id: species[Math.floor(Math.random() * species.length)].id,
+    });
+  }
 
   process.exit(0);
 };

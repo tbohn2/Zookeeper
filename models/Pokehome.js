@@ -23,22 +23,6 @@ Pokehome.init(
     description: {
       type: DataTypes.STRING,
     },
-    // available_food: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: "diet",
-    //     key: "id",
-    //   },
-    // },
-    // habitat_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: "habitat",
-    //     key: "id",
-    //   },
-    // },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

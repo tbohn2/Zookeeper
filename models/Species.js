@@ -19,10 +19,10 @@ Species.init(
       type: DataTypes.STRING,
       // allowNull: false,
     },
-    // image: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     // diet_id: {
     //   type: DataTypes.INTEGER,
     //   allowNull: false,
