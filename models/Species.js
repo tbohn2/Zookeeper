@@ -15,22 +15,14 @@ Species.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    type1: {
+    type: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
     },
-    type2: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    image: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // image: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     // diet_id: {
     //   type: DataTypes.INTEGER,
     //   allowNull: false,

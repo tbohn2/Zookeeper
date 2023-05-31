@@ -1,0 +1,14 @@
+[
+    {
+        "name":"Sparky",
+        "happiness": 0
+    },
+    {
+        "name": "Terry",
+        "happiness": -1
+    },
+    {
+        "name": "Jeff",
+        "happiness": 2
+    }
+]

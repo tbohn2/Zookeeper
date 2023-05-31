@@ -18,6 +18,7 @@ Pokehome.init(
     size: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 5,
     },
     description: {
       type: DataTypes.STRING,
