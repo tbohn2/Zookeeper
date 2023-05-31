@@ -3,7 +3,7 @@ const sequelize = require("../config/connection");
 
 class Species extends Model {}
 
-Project.init(
+Species.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -19,21 +19,17 @@ Project.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    type1_id: {
-      type: DataTypes.INTEGER,
+    type1: {
+      type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: "type",
-        key: "id",
-      },
     },
-    type2_id: {
+    type2: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      references: {
-        model: "type",
-        key: "id",
-      },
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     // diet_id: {
     //   type: DataTypes.INTEGER,

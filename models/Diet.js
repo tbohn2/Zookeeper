@@ -3,7 +3,7 @@ const sequelize = require("../config/connection");
 
 class Diet extends Model {}
 
-Project.init(
+Diet.init(
   {
     id: {
       type: DataTypes.INTEGER,

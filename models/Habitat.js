@@ -3,7 +3,7 @@ const sequelize = require("../config/connection");
 
 class Habitat extends Model {}
 
-Project.init(
+Habitat.init(
   {
     id: {
       type: DataTypes.INTEGER,
