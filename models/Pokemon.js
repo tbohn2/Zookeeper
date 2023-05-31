@@ -3,7 +3,7 @@ const sequelize = require("../config/connection");
 
 class Pokemon extends Model {}
 
-Project.init(
+Pokemon.init(
   {
     id: {
       type: DataTypes.INTEGER,
