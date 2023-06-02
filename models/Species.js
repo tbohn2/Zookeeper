@@ -15,17 +15,9 @@ Species.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    type1: {
+    type: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    type2: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
+      // allowNull: false,
     },
     image: {
       type: DataTypes.STRING,
