@@ -15,13 +15,22 @@ const fetchData = async () => {
         const species = {
           id: data.id,
           name: data.name,
-          type: JSON.stringify(data.types),
+          type: getTypes(data),
           image: data.sprites.front_default,
         };
         speciesData.push(species);
       })
     );
   }
+};
+
+const getTypes = (data) => {
+  types = [];
+  types.push(JSON.stringify(data.types[0].type.name));
+  if (data.types.length === 2) {
+    types.push(JSON.stringify(data.types[1].type.name));
+  }
+  return types;
 };
 
 const seedDatabase = async () => {
