@@ -14,6 +14,7 @@ router.get("/:id", async (req, res) => {
         {
           model: Pokemon,
           attributes: ["id", "name", "happiness", "species_id"],
+          include: [{ model: Species, attributes: ["image"] }],
         },
       ],
     });
