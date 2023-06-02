@@ -12,8 +12,8 @@ const createZoo = async (name) => {
         body: JSON.stringify(name)
     });
     if (response.ok) {
-        // Relocate to Christopher's page
-        document.location.replace('/' + name);
+        console.log(response.id);
+        document.location.replace('/' + response.id);
     } else {
         alert(response.statusText);
     }
@@ -26,6 +26,8 @@ pokehomecards.forEach(function (pokehomecard) {
         event.preventDefault();
         const zooName = pokehomecard.querySelector('#title').innerText;
         console.log(zooName);
+
+
     });
 });
 
