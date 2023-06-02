@@ -1,9 +1,9 @@
 const newName = (event) => {
     event.preventdefault()
-    const name = event.target.getElementByID('title')
-    createZoo(name)
+    const name = event.target.getElementByID('title').innertext
+    console.log(name);
+    // createZoo(name)
 }
-
 
 const createZoo = async (name) => {
     const response = await fetch('/api/pokezoo', {
@@ -19,20 +19,15 @@ const createZoo = async (name) => {
     }
 }
 
-const loadZoo = async (event) => {
-    event.preventdefault()
-    const name = await event.target.getElementByID('title')
-    // Relocate to Christopher's page
-    document.location.replace('/' + name);
-}
+const pokehomecards = document.querySelectorAll('.pokehomecard')
 
-
-
-
-
-
-document.querySelector('.pokehomecard').addEventListener('click', newName);
-document.querySelector('#logoutbtn').addEventListener('click', loadZoo);
+pokehomecards.forEach(function (pokehomecard) {
+    pokehomecard.addEventListener('click', function (event) {
+        event.preventDefault();
+        const zooName = pokehomecard.querySelector('#title').innerText;
+        console.log(zooName);
+    });
+});
 
 const logout = async () => {
     const response = await fetch('/api/users/logout', {
