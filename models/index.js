@@ -21,4 +21,12 @@ Pokemon.belongsTo(Pokehome, {
   foreignKey: "pokehome_id",
 });
 
+Pokemon.belongsTo(Species, {
+  foreignKey: "species_id",
+});
+
+Species.hasMany(Pokemon, {
+  foreignKey: "species_id",
+});
+
 module.exports = { User, Pokemon, Pokehome, Species };

@@ -9,8 +9,18 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const zooData = await Pokehome.findByPk(req.params.id, {});
-    res.render("builder", zooData);
+    const homeData = await Pokehome.findByPk(req.params.id, {
+      include: [
+        {
+          model: Pokemon,
+          attributes: ["id", "name", "happiness", "species_id"],
+          include: [{ model: Species, attributes: ["image"] }],
+        },
+      ],
+    });
+
+    const pokehome = homeData.get({ plain: true });
+    res.render("builder", { ...pokehome });
   } catch {}
 });
 
