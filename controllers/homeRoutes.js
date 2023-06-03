@@ -6,7 +6,7 @@ router.get('/dashboard', async (req, res) => {
   try {
     // const user_id = req.session.user_id
     const user_id = 1
-    const pokezoos = await Pokehome.findAll({
+    const pokezooData = await Pokehome.findAll({
       where: { user_id: user_id },
       attributes: ['name'],
       include: [{
@@ -18,13 +18,13 @@ router.get('/dashboard', async (req, res) => {
           }]
       }]
     });
-    res.json(pokezoos)
-    // const pokezoo = pokezoos.get({ plain: true });
 
-    // res.render('dashboard', {
-    //   ...pokezoo,
-    //   logged_in: req.session.logged_in
-    // });
+    const pokezoos = pokezooData.map((pokezoo) => pokezoo.get({ plain: true }));
+
+    res.render('dashboard', {
+      pokezoos,
+      // logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err);
   }

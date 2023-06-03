@@ -27,15 +27,18 @@
     <h2 class="border-dark border p-2">Select or Create your Pokehome below</h2>
 
     <div class="my-4 col-12 d-flex flex-wrap justify-content-center">
+        {{#each pokezoos}}
+        {{!-- {{pokezoo}} --}}
         <a class="pokehomecard d-flex flex-column align-items-center justify-content-center col-4 my-2 mx-4 border border-dark"
             href="#">
-            <h3 id="title">The Diggers</h3>
+            <h3 id="title"> {{name}} </h3>
             <div>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png" alt="">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png" alt="">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png" alt="">
+                {{#each pokemons}}
+                <img src={{species.image}} alt="">
+                {{/each}}
             </div>
         </a>
+        {{/each}}
     </div>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Create new
         Pokezoo</button>
