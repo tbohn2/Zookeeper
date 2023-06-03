@@ -7,6 +7,9 @@ const images = [
   document.querySelector("#slot6"),
 ];
 
+const url = window.location.href.split("/");
+const home_id = url[url.length - 1];
+
 let speciesSlot = [1, 2, 3, 4, 5, 6];
 updateImages();
 function nextSpecies() {
@@ -37,5 +40,32 @@ function updateImages() {
     );
   }
 }
+
+const createNewPokemon = async (event) => {
+  const button = event.target;
+  const name = document.querySelector("#pokemonName").value;
+  if (button.className !== "species" || name === "") return;
+  const image = button.getAttribute("src");
+  let num = image.split("/");
+  num = num[num.length - 1].split(".")[0];
+  let newPokemon = {
+    name: name,
+    species_id: num,
+    pokehome_id: home_id,
+  };
+  const response = await fetch("/api/pokemon", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newPokemon),
+  });
+  if (response.ok) {
+    document.location.reload();
+  } else {
+  }
+};
+
 document.querySelector("#prev").addEventListener("click", prevSpecies);
 document.querySelector("#next").addEventListener("click", nextSpecies);
+document
+  .querySelector("#table-row")
+  .addEventListener("click", createNewPokemon);

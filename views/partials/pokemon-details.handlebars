@@ -1,5 +1,16 @@
+<th>
+
 <h2>{{name}} </h2>
+{{#if (isHappy happiness)}}
+<button class="btn btn-outline-success">
+{{else}}
+<button class="btn btn-outline-danger">
+{{/if}}
 
-<img src="{{species.image}}" alt="">
 
-<p>Current happiness: {{happiness}}</p>
+    <img src="{{species.image}}" alt="">
+</button>
+
+<p>Happiness: {{happiness}}</p>
+</th>
+

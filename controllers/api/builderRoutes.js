@@ -24,4 +24,9 @@ router.get("/:id", async (req, res) => {
   } catch {}
 });
 
+router.post("/:id", async (req, res) => {
+  try {
+  } catch (error) {}
+});
+
 module.exports = router;

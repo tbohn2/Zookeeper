@@ -22,4 +22,7 @@ module.exports = {
   get_sprite: (id) => {
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
   },
+  isHappy: function (value) {
+    return value > 0;
+  },
 };

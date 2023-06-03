@@ -1,5 +1,8 @@
 {{description}}
+<tr>
+    {{#each pokemons as |pokemon|}}
 
-{{#each pokemons as |pokemon|}}
-{{> pokemon-details}}
-{{/each}}
+        {{> pokemon-details}}
+
+    {{/each}}
+</tr>
