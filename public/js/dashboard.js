@@ -1,19 +1,26 @@
 const newName = (event) => {
-    event.preventdefault()
-    const name = event.target.getElementByID('title').innertext
+    event.preventDefault()
+    const name = document.querySelector('#newPokehome').value
     console.log(name);
-    // createZoo(name)
+    createZoo(name)
 }
 
 const createZoo = async (name) => {
-    const response = await fetch('/api/pokezoo', {
+    req = `[{"name": "${name}"}]`
+    const response = await fetch('/api/dashboard', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(name)
+        body: req
     });
     if (response.ok) {
-        console.log(response.id);
-        document.location.replace('/' + response.id);
+        const res = async (response) => {
+            const data = await response.json()
+            console.log(data.id);
+            const id = data.id
+            document.location.replace('/' + id);
+        }
+        res(response)
+
     } else {
         alert(response.statusText);
     }
@@ -26,8 +33,6 @@ pokehomecards.forEach(function (pokehomecard) {
         event.preventDefault();
         const zooName = pokehomecard.querySelector('#title').innerText;
         console.log(zooName);
-
-
     });
 });
 
@@ -44,4 +49,5 @@ const logout = async () => {
     }
 };
 
+document.querySelector('#createbtn').addEventListener('click', newName);
 document.querySelector('#logoutbtn').addEventListener('click', logout);

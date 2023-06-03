@@ -18,12 +18,16 @@ router.get('/findZoo', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    // const name = req.body.name
+    const name = req.body[0].name
+    // console.log(name);
     try {
         const newZoo = await Pokehome.create({
-            ...req.body
+            name: name,
+            user_id: 1
         });
-
-        res.status(200).json(newPost);
+        // console.log(res.json(newZoo))
+        res.status(200).json(newZoo);
     } catch (err) {
         res.status(400).json(err);
     }

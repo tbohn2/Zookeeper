@@ -22,6 +22,7 @@ Pokehome.init(
     },
     description: {
       type: DataTypes.STRING,
+      defaultValue: "The coolest Pokehome",
     },
     user_id: {
       type: DataTypes.INTEGER,
