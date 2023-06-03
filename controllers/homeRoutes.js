@@ -15,7 +15,8 @@ router.get('/dashboard', async (req, res) => {
           {
             model: Species,
             attributes: ['image']
-          }]
+          }],
+        limit: 3
       }]
     });
 
