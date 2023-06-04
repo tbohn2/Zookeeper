@@ -1,13 +1,14 @@
 const router = require("express").Router();
 const { Pokemon, Pokehome, Species } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     res.render("builder");
   } catch {}
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   try {
     const homeData = await Pokehome.findByPk(req.params.id, {
       include: [
@@ -22,11 +23,6 @@ router.get("/:id", async (req, res) => {
     const pokehome = homeData.get({ plain: true });
     res.render("builder", { ...pokehome });
   } catch {}
-});
-
-router.post("/:id", async (req, res) => {
-  try {
-  } catch (error) {}
 });
 
 module.exports = router;
