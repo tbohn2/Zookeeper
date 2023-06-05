@@ -8,5 +8,30 @@
         "name": "Route 1",
         "size": 4,
         "description": "The first steps of every trainer"
+    },
+    {
+        "name": "Pallet Town",
+        "size": 4,
+        "description": "A town of beginnings"
+    },
+    {
+        "name": "Mesagoza",
+        "size": 4,
+        "description": "The largest city in Paldea"
+    },
+    {
+        "name": "Akala Island",
+        "size": 4,
+        "description": "One of the main islands in the Alola Region"
+    },
+    {
+        "name": "Hoenn Pokemon League",
+        "size": 4,
+        "description": "Where some of the best trainers find victory or defeat"
+    },
+    {
+        "name": "Spear Pillar",
+        "size": 4,
+        "description": "Home of the Creation Trio"
     }
-]
+    ]

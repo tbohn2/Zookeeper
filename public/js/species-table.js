@@ -7,9 +7,6 @@ const images = [
   document.querySelector("#slot6"),
 ];
 
-const url = window.location.href.split("/");
-const home_id = url[url.length - 1];
-
 let speciesSlot = [1, 2, 3, 4, 5, 6];
 updateImages();
 function nextSpecies() {
