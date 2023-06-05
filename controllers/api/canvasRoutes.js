@@ -24,12 +24,14 @@ router.get("/:id", async (req, res) => {
       const sprite = pokemons[i].species.image;
 
       await loadImage(sprite).then((sprite) => {
-        context.drawImage(sprite, 200 * i, 0, 200, 200);
+        let x = (i % 6) * 200;
+        let y = Math.floor(i / 6) * 200;
+        context.drawImage(sprite, x, y, 200, 200);
       });
     }
     const buffer = myCanvas.toBuffer("image/png");
     fs.writeFileSync("./public/downloads/image.png", buffer);
-
+    fs.close();
     res.send("./public/downloads/image.png");
   } catch (error) {
     res.status(400).json(error);
