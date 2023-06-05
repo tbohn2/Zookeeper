@@ -1,57 +1,53 @@
-function setFormMessage(formElement, type, message) {
-  const messageElement = formElement.querySelector(".form__message");
+const loginFormHandler = async (event) => {
+  event.preventDefault();
 
-  messageElement.textContent = message;
-  messageElement.classList.remove("form_message--success", "form__message--error");
-  messageElement.classList.add(`form__message--${type}`);
-}
+  // Collect values from the login form
+  const email = document.querySelector("#email-login").value.trim();
+  const password = document.querySelector("#password-login").value.trim();
 
-function setInputError(inputElement, message) {
-  inputElement.classList.add("form__input--error");
-  inputElement.parentElement.querySelector(".form__input-error-message").textContent = message;
-}
-
-function clearInputError(inputElement) {
-  inputElement.classList.remove("form__input--error");
-  inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const loginForm = document.querySelector("#login");
-  const createAccountForm = document.querySelector("#createAccount");
-  const homePageForm = document.querySelector("#homePage");
-
-  document.querySelector("#linkCreateAccount").addEventListener("click", e => {
-    e.preventDefault();
-    loginForm.classList.add("form--hidden");
-    createAccountForm.classList.remove("form--hidden");
-  });
-
-  document.querySelector("#linkLogin").addEventListener("click", e => {
-    e.preventDefault();
-    loginForm.classList.remove("form--hidden");
-    createAccountForm.classList.add("form--hidden");
-    
-  });
-
-  loginForm.addEventListener("submit", e => {
-    e.preventDefault();
-    loginForm.classList.remove("form--hidden");
-    homePageForm.classList.add("form--hidden");
-
-    // Perform your AJAX/Fetch login
-
-    setFormMessage(loginForm, "error", "Invalid username/password combination");
-  });
-
-document.querySelectorAll(".form__input").forEach(inputElement => {
-  inputElement.addEventListener("blur", e => {
-    if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 8) {
-      setInputError(inputElement, "Username must be at least 8 characters in length");
-    }
-  });
-inputElement.addEventListener("input", e => {
-  clearInputError(inputElement);
+  if (email && password) {
+    // Send a POST request to the API endpoint
+    const response = await fetch("/api/users/login", {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+      headers: { "Content-Type": "application/json" },
     });
-  });
-});
+
+    if (response.ok) {
+      // If successful, redirect the browser to the profile page
+      document.location.replace("/dashboard");
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+const signupFormHandler = async (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector("#name-signup").value.trim();
+  const email = document.querySelector("#email-signup").value.trim();
+  const password = document.querySelector("#password-signup").value.trim();
+
+  if (name && email && password) {
+    const response = await fetch("/api/users", {
+      method: "POST",
+      body: JSON.stringify({ name, email, password }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      document.location.replace("/dashboard");
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+document
+  .querySelector(".login-form")
+  .addEventListener("submit", loginFormHandler);
+
+document
+  .querySelector(".signup-form")
+  .addEventListener("submit", signupFormHandler);
