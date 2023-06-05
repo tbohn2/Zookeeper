@@ -8,7 +8,9 @@ router.get("/:id", async (req, res) => {
     });
     const pokemon = pokemonData.get({ plain: true });
     res.json(pokemon);
-  } catch (error) {}
+  } catch (error) {
+    res.status(400).json(error);
+  }
 });
 
 router.post("/", async (req, res) => {
