@@ -5,7 +5,9 @@ const withAuth = require("../../utils/auth");
 router.get("/", withAuth, async (req, res) => {
   try {
     res.render("builder");
-  } catch {}
+  } catch (error) {
+    res.status(400).json(error);
+  }
 });
 
 router.get("/:id", withAuth, async (req, res) => {
@@ -22,7 +24,9 @@ router.get("/:id", withAuth, async (req, res) => {
 
     const pokehome = homeData.get({ plain: true });
     res.render("builder", { ...pokehome });
-  } catch {}
+  } catch (error) {
+    res.status(400).json(error);
+  }
 });
 
 module.exports = router;

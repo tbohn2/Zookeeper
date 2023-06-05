@@ -17,28 +17,11 @@ Species.init(
     },
     type: {
       type: DataTypes.STRING,
-      // allowNull: false,
     },
     image: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // diet_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: "diet",
-    //     key: "id",
-    //   },
-    // },
-    // habitat_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: "habitat",
-    //     key: "id",
-    //   },
-    // },
   },
   {
     sequelize,
