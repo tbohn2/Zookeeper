@@ -4,7 +4,7 @@
         <h3 class="col-4">View </h3>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-6">
             <div class="row">
                     <a class="btn color-white btn-primary"href="/dashboard">View your other Homes</a>
                     <button id="image-create" class="btn btn-success">Generate your home as an image</button> 
@@ -14,13 +14,11 @@
                 <h2>
                     {{name}}
                 </h2>
-                <table>
                     {{>pokehome-details}}
-                </table>
             </div>
         </div>
-        <div class="col">
-            <div class="card">
+        <div class="col-6">
+            <div class="">
                 <h3>Select Pokemon to Add</h3>
                 <div class="">
                     {{> species-table}}
