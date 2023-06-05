@@ -28,15 +28,15 @@ const createZoo = async (name, description) => {
   }
 };
 
-const pokehomecards = document.querySelectorAll(".pokehomecard");
+// const pokehomecards = document.querySelectorAll(".pokehomecard");
 
-pokehomecards.forEach(function (pokehomecard) {
-  pokehomecard.addEventListener("click", function (event) {
-    event.preventDefault();
-    const zooName = pokehomecard.querySelector("#title").innerText;
-    console.log(zooName);
-  });
-});
+// pokehomecards.forEach(function (pokehomecard) {
+//   pokehomecard.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     const zooName = pokehomecard.querySelector("#title").innerText;
+//     document.location.assign("/api/builder/" + id);
+//   });
+// });
 
 const logout = async () => {
   const response = await fetch("/api/users/logout", {
