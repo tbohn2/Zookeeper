@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
     const newZoo = await Pokehome.create({
       name: response.name,
       description: response.description,
-      user_id: 1,
+      user_id: req.session.user_id,
     });
     // console.log(res.json(newZoo))
     res.status(200).json(newZoo);
