@@ -12,12 +12,12 @@
   <link rel="stylesheet" href="/css/style.css"> --}}
 </head>
 <header>
-  <a href="/">Pokemon Keeper</a>
+  <a class="btn btn-secondary" href="/">Pokemon Keeper</a>
    {{#if logged_in}}
-        <a href="/dashboard">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a class="btn btn-info" href="/dashboard">Dashboard</a> |
+        <button class="btn btn-danger" id="logout">Logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a class="btn btn-success" href="/login">Login</a>
         {{/if}}
 </header>
 <body>
