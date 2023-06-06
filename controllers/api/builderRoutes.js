@@ -23,7 +23,7 @@ router.get("/:id", withAuth, async (req, res) => {
     });
 
     const pokehome = homeData.get({ plain: true });
-    res.render("builder", { ...pokehome });
+    res.render("builder", { ...pokehome, logged_in: req.session.logged_in });
   } catch (error) {
     res.status(400).json(error);
   }

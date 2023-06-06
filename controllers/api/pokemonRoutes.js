@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
   try {
     const newPokemon = await Pokemon.create({
       name: pokemonData.name,
-      happiness: 0,
+      happiness: Math.floor(Math.random() * 5) - 2,
       species_id: pokemonData.species_id,
       pokehome_id: pokemonData.pokehome_id,
     });
