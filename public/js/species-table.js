@@ -4,14 +4,13 @@ const images = [
   document.querySelector("#slot3"),
   document.querySelector("#slot4"),
   document.querySelector("#slot5"),
-  document.querySelector("#slot6"),
 ];
 
-let speciesSlot = [1, 2, 3, 4, 5, 6];
+let speciesSlot = [1, 2, 3, 4, 5];
 updateImages();
 function nextSpecies() {
   speciesSlot = speciesSlot.map((speciesNumber) => {
-    speciesNumber += 6;
+    speciesNumber += 5;
     if (speciesNumber > 151) {
       speciesNumber %= 151;
     }
@@ -21,7 +20,7 @@ function nextSpecies() {
 }
 function prevSpecies() {
   speciesSlot = speciesSlot.map((speciesNumber) => {
-    speciesNumber -= 6;
+    speciesNumber -= 5;
     if (speciesNumber < 1) {
       speciesNumber += 151;
     }
