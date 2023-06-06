@@ -63,5 +63,5 @@ const createNewPokemon = async (event) => {
 document.querySelector("#prev").addEventListener("click", prevSpecies);
 document.querySelector("#next").addEventListener("click", nextSpecies);
 document
-  .querySelector("#table-row")
+  .querySelector("#pokeSelector")
   .addEventListener("click", createNewPokemon);
