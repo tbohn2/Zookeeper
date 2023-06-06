@@ -6,25 +6,25 @@
     </div>
     <div class="row">
         <div class="col-6">
-        <h1 class="">Build your Pokehome</h1>
+        <h1 class="text-center">Build your Pokehome</h1>
             <div class="row">
                     <a class="btn color-white btn-primary"href="/dashboard">View your other Homes</a>
                     <button id="image-create" class="btn btn-success">Generate your home as an image</button> 
             </div>
             <div class="row">
                 <div class="card"> 
-                    <h4>Home Preview </h4>
+                    <h4 class="text-center">Home Preview </h4>
 
                     <div class="row">
 
-                    <h2>{{name}}</h2>
+                    <h2 class="text-center">{{name}}</h2>
                     {{>pokehome-details}}
                 </div>
                 </div>
             </div>
         </div>
         <div class="col-6">
-                <h3>Select Pokemon to Add</h3>
+                <h3 class="text-center">Select Pokemon to Add</h3>
             <div class="">
                 <div class="">
                     {{> species-table}}
