@@ -21,7 +21,8 @@
         <img src={{get_sprite 39}} alt="">
     </div>
 
-    <div class="col-6">
+    <div class="my-4 col-12 d-flex flex-wrap justify-content-center">
+
         <h2 class="p-2">Select or Create your Pokehome below</h2>
     </div>
 
@@ -39,9 +40,15 @@
         </a>
         {{/each}}
     </div>
+
+    <div class="my-4 col-12 d-flex flex-wrap justify-content-center">
+        <button type="button" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#exampleModal">Create new Pokezoo</button>
+    </div>
+
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Create
         new
         Pokezoo</button>
+
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog ">
