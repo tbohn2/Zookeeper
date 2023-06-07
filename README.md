@@ -19,4 +19,4 @@ In order to fully use the site, a user will be required to create an account, wh
 The live application is hosted at the following url:
 https://pokezoo6000.herokuapp.com/
 
-![pokezoo6000 herokuapp com_](https://github.com/tbohn2/Zookeeper/assets/124842865/0ebe461d-f6d5-423d-816b-9b3d6392a04a)
+![pokezoo6000 herokuapp com_ (1)](https://github.com/tbohn2/Zookeeper/assets/124842865/05c5de1b-1463-46e9-b12f-4c0821867cfe)
