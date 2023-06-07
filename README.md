@@ -2,11 +2,11 @@
 
 ## Description
 
-Looking to create an enjoyable experience for constructing and overseeing you very own zoo. We chose making a zoo building application because most people like visiting zoo's and the game of Pokemon so we wanted to give users a way to customize their own zoo by selecting different pokemon, habitats and enclosures. Users will also be able to build multiple zoos and view other users zoo creations
+Looking to create an enjoyable experience for constructing and overseeing you very own zoo. We chose making a zoo building application because most people like visiting zoo's and the game of Pokemon so we wanted to give users a way to customize their own zoo by selecting different pokemon, habitats and enclosures. Users will also be able to build multiple zoos and view other users zoo creations. This application uses PokeAPI: https://pokeapi.co/ which is a free and open api which we used the information from in order to populate our data.
 
 ## Installation
 
-It is required to use this application with node and npm. There are many required dependencies that will be downloaded with a "npm install". Depending on the machine, it may be required to install Cairo as well. The node packages we used are the following: bcrypt, canvas, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, sequelize.
+If you wanted to host this application yourself, it is required to use this application with node and npm. There are many required dependencies that will be downloaded with a "npm install". Depending on the machine, it may be required to install Cairo as well. The node packages we used are the following: bcrypt, canvas, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, sequelize.
 
 The database is stored on a mysql server, and access to one will be required for our application.
 
@@ -18,3 +18,4 @@ In order to fully use the site, a user will be required to create an account, wh
 
 The live application is hosted at the following url:
 https://pokezoo6000.herokuapp.com/
+
